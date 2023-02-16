@@ -6,16 +6,20 @@ import "./App.css";
 const App = () => {
   const [todos, setTodos] = useState([]);
 
-  const addTodo = (todo) => {
-    if (todo.text !== "") {
-
-      setTodos([...todos, todo]);
+  const addTodo = (todoText) => {
+    const newTodo = {
+      id: Math.random().toString(36).substr(2, 9),
+      text: todoText,
+      status: false,
     }
+
+    setTodos([...todos, newTodo]);
+
   };
 
-  const deleteTodo = (text) => {
+  const deleteTodo = (id) => {
     const newTodos = todos.filter((todo) => {
-      return todo.text !== text;
+      return todo.id !== id;
     });
 
     setTodos(newTodos);
@@ -23,8 +27,8 @@ const App = () => {
 
   const updateTodo = (input, oldEntry) => {
     const newTodos = todos.map((todo) => {
-      if (todo.text === oldEntry.text) {
-        return { text: input, status: oldEntry.status }
+      if (todo.id === oldEntry.id) {
+        return { ...oldEntry, text: input }
       } else {
         return todo;
       }

@@ -51,7 +51,7 @@ const TodoListItem = ({
         <button
           className="delete-button"
           onClick={() => {
-            onDelete(entry.text);
+            onDelete(entry.id);
           }}
         >
           Delete

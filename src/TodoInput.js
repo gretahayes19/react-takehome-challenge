@@ -5,7 +5,7 @@ const TodoInput = ({ addTodo }) => {
 
   const handleAdd = () => {
     addTodo(todo)
-    setTodo({ text: '', status: false })
+    setTodo('')
   }
 
   return (
@@ -16,7 +16,7 @@ const TodoInput = ({ addTodo }) => {
         value={todo.text}
         placeholder="Create a new todo"
         onChange={(e) => {
-          setTodo({ text: e.target.value, status: false });
+          setTodo(e.target.value);
         }}
       />
       <button className="add-button" onClick={handleAdd}>
