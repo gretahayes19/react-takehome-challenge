@@ -1,20 +1,18 @@
-const TodoList = ({ list, remove }) => {
+import TodoListItem from "./TodoListItem";
+
+const TodoList = ({ list, remove, update }) => {
+  debugger
   return (
     <>
       {list?.length > 0 ? (
         <div className="todo-list">
           {list.map((entry, index) => (
-            <div key={index} className="todo">
-              <div className="todo-entry">{entry}</div>
-              <button
-                className="delete-button"
-                onClick={() => {
-                  remove(entry);
-                }}
-              >
-                Delete
-              </button>
-            </div>
+            <TodoListItem
+              entry={entry}
+              key={index}
+              onUpdate={update}
+              onDelete={remove}
+            />
           ))}
         </div>
       ) : (

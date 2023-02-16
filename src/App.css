@@ -94,6 +94,32 @@ button {
   background: #fe6a6a;
 }
 
+.edit-button {
+  border: none;
+  color: yellow;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.edit-button:hover {
+  color: #252525;
+
+  background: yellow;
+}
+
+.confirm-button {
+  border: none;
+  color: green;
+  /* margin-left: auto; */
+  margin-right: 0;
+}
+
+.confirm-button:hover {
+  color: #252525;
+
+  background: green;
+}
+
 .todo-list {
   padding: 0;
   list-style: none;
@@ -107,11 +133,39 @@ button {
   transition: all 0.3s ease-out;
   border-left: 5px solid #cf972e;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
-.todo-entry {
+
+.todo-edit {
+  max-width: fit-content;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-text {
   padding-left: 5px;
+  padding: .8em;
+  cursor: pointer;
+  width: 400px;
+  overflow: hidden;
+}
+
+.todo-done {
+  background-color: green;
+}
+
+.todo-undone {
+  background-color: #fe6a6a;
+}
+
+.status-checkbox {
+  width: 15px;
+  appearance: auto;
+  margin-right: 1em;
 }
 
 .empty {
